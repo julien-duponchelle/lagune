@@ -2,10 +2,9 @@
 # based on oh-my-zsh theme 
 #
 
-### NVM
-
-ZSH_THEME_NVM_PROMPT_PREFIX="%B⬡%b "
-ZSH_THEME_NVM_PROMPT_SUFFIX=""
+### Virtualenv
+ZSH_THEME_VIRTUALENV_PREFIX="⛵ %{$fg[yellow]%}"
+ZSH_THEME_VIRTUALENV_SUFFIX="%{$reset_color%}"
 
 ### Git [±master ▾●]
 
@@ -120,7 +119,7 @@ lagune_precmd () {
 
 setopt prompt_subst
 PROMPT='$_LIBERTY'
-RPROMPT='$(nvm_prompt_info) $(lagune_git_prompt)'
+RPROMPT='$(virtualenv_prompt_info) $(lagune_git_prompt)'
 
 autoload -U add-zsh-hook
 add-zsh-hook precmd lagune_precmd
